@@ -1,0 +1,41 @@
+name: SowWhatYouReap
+version: '${project.version}'
+main: dev.satyrn.sowwhatyoureap.SowWhatYouReap
+api-version: 1.18
+prefix: Sow What You Reap
+depend: [ Vault ]
+authors: [ satyrnidae ]
+description: Automatically harvest and replant crops by right-clicking them!
+website: https://satyrn.dev/projects/sow_what_you_reap
+commands:
+  sowwhatyoureap:
+    description: Performs various tasks for the plugin.
+    usage: /<command> [reload]
+    aliases:
+      - swyr
+permissions:
+  sowwhatyoureap.*:
+    default: false
+    description: Provides access to all Sow What You Reap functionality
+    children:
+      sowwhatyoureap.use.*: true
+      sowwhatyoureap.fortune: true
+      sowwhatyoureap.admin: true
+  sowwhatyoureap.admin:
+    default: op
+    description: Allows a user to reload the plugin configuration
+  sowwhatyoureap.use.*:
+    default: false
+    description: Allows a user to use both hand and hoe harvesting.
+    children:
+      sowwhatyoureap.use.hand: true
+      sowwhatyoureap.use.hoe: true
+  sowwhatyoureap.use.hand:
+    default: true
+    description: Allows a user to harvest with their hand.
+  sowwhatyoureap.use.hoe:
+    default: true
+    description: Allows a user to harvest with a hoe.
+  sowwhatyoureap.fortune:
+    default: true
+    description: Allows a user to apply the Fortune enchantment to increase their harvest drop rates

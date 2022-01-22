@@ -1,0 +1,69 @@
+# A list of all items which should be treated as hoes.
+# Valid values: https://papermc.io/javadocs/paper/1.18/org/bukkit/Material.html#enum-constant-summary
+# Default: Diamond, gold, iron, netherite, stone, and wooden hoes.
+hoeItems:
+  - diamond_hoe
+  - golden_hoe
+  - iron_hoe
+  - netherite_hoe
+  - stone_hoe
+  - wooden_hoe
+# Whether Sow what you Reap requires a player to be holding a hoe to harvest items.
+# Default: false
+# Note:  Harvesting by hand will always result in a lower yield than using a hoe.
+requireHoe: false
+# Whether Sow what you Reap will damage the user's hoe.
+# Default: true
+damageHoe: true
+# Whether the results of using a hoe will apply the Fortune enchantment.
+# Default: true
+applyFortune: true
+# Whether replanting will require that the user be carrying a matching seed.
+# Default: false
+requireSeedsToReplant: false
+# Minimum number of drops for a user that is harvesting without a hoe.
+# Harvesting with hands will cause no seeds to drop.
+# Valid values: none, one, minimum, minimum_with_seeds, no_seeds, and same_as_hoe
+# Default: minimum
+handYield: minimum
+# Yield settings, per crop.
+yields:
+  # Yield settings for wheat.
+  wheat:
+    # The minimum yield for wheat.
+    # Defaults to 0 if unset. Initially set to 1.
+    minimumYield: 1
+    # The maximum yield for wheat.
+    # Defaults to 0 if unset. Initially set to 1.
+    maximumYield: 1
+    # The minimum seed yield for wheat.
+    # Defaults to 0.
+    minimumSeeds: 0
+    # The maximum seed yield for wheat.
+    # Defaults to 0 if unset. Initially set to 3.
+    maximumSeeds: 3
+  beetroot:
+    minimumYield: 1
+    maximumYield: 1
+    minimumSeeds: 1
+    maximumSeeds: 4
+  carrot:
+    minimumYield: 2
+    maximumYield: 5
+  potato:
+    minimumYield: 1
+    maximumYield: 5
+    secondaryDropChance: 0.02
+  netherWart:
+    minimumYield: 2
+    maximumYield: 4
+# Whether to show debug output in the console.
+# Defaults to false.
+debug: false
+# Whether to send usage telemetry.
+# Uses bStats (https://bstats.org)
+# Defaults to false, initially set to true.
+metrics: true
+# The locale to use while translating chat messages.
+# Defaults to "en_US".
+locale: en_US
