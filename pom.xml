@@ -16,13 +16,31 @@
         <java.version>1.17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>https://satyrn.dev/sites/sow-what-you-reap</url>
+    <url>https://satyrn.dev/sites/${project.artifactId}</url>
     <scm>
         <tag>GitHub</tag>
-        <url>https://github.com/satyrnidae/sow-what-you-reap</url>
+        <url>https://github.com/satyrnidae/${project.artifactId}</url>
     </scm>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/mit-license.php</url>
+            <distribution></distribution>
+        </license>
+    </licenses>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/satyrnidae/${project.artifactId}/issues</url>
+    </issueManagement>
 
     <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>3.5.1</version>
+            </extension>
+        </extensions>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
